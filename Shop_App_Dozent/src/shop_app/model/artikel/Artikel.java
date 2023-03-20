@@ -95,11 +95,13 @@ public class Artikel {
 		this.artikelbilder = artikelbilder;
 	}
 	
+	@Override
 	public String toString() {
-		// Muss selbst ausgedacht werden!
-		return null;
+		return "Artikel [artikelnummer=" + artikelnummer + ", bezeichnung=" + bezeichnung + ", beschreibung="
+				+ beschreibung + ", lagerbestand=" + lagerbestand + ", brutto=" + brutto + ", netto=" + netto
+				+ ", mwst_satz=" + mwst_satz + ", Kategorie=" + Kategorie + "]";
 	}
-	
+
 	public void addArtikelbild(Artikelbild bild) {
 		this.artikelbilder.add(bild);
 	}
