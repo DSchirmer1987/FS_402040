@@ -27,15 +27,15 @@ public class App {
 		Artikel dbArtikel = artikelDB.laden(10);
 		System.out.println(dbArtikel);
 		
-		Artikel dbArtikelName = artikelDB.ladenName("PC-Spiel ANNO");
-		System.out.println(dbArtikelName);
-		
-		Artikel boeserArtikel = artikelDB.ladenName("PC-Spiel ANNO; DROP TABLE testTabelle");
-		System.out.println(boeserArtikel);
-		
-		Artikel neu = new Artikel(0, "Office 95", "Altes Office", 15, 19.99, 14.99, 19, "2");
-		System.out.println(neu);
-		artikelDB.speichern(neu);
+//		Artikel dbArtikelName = artikelDB.ladenName("PC-Spiel ANNO");
+//		System.out.println(dbArtikelName);
+//		
+//		Artikel boeserArtikel = artikelDB.ladenName("PC-Spiel ANNO; DROP TABLE testTabelle");
+//		System.out.println(boeserArtikel);
+//		
+//		Artikel neu = new Artikel(0, "Office 95", "Altes Office", 15, 19.99, 14.99, 19, "2");
+//		System.out.println(neu);
+//		artikelDB.speichern(neu);
 	}
 
 }

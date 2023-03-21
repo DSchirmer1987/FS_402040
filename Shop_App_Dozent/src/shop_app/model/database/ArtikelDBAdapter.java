@@ -25,15 +25,20 @@ public class ArtikelDBAdapter implements DatenInterface<Artikel>{
 			PreparedStatement stmt = db.getDb_conn().prepareStatement(sql);
 			ResultSet results = stmt.executeQuery();
 			while(results.next()) {
-				artikel = new Artikel(results.getInt("Artikelnummer"),
-									  results.getString("Bezeichnung"),
-									  results.getString("Beschreibung"),
-									  results.getInt("Lagerbestand"),
-									  results.getDouble("Bruttopreis"),
-									  results.getDouble("Nettopreis"),
-									  results.getInt("Mwst_Satz"),
-									  results.getString("Kategorie_ID")
-									  );
+				String kat_sql = "SELECT Bezeichnung FROM Kategorie WHERE Kategorie_ID = " + results.getString("Kategorie_ID");
+				PreparedStatement kat_stmt = db.getDb_conn().prepareStatement(kat_sql);
+				ResultSet kat_results = kat_stmt.executeQuery();
+				while(kat_results.next()) {
+					artikel = new Artikel(results.getInt("Artikelnummer"),
+							  results.getString("Bezeichnung"),
+							  results.getString("Beschreibung"),
+							  results.getInt("Lagerbestand"),
+							  results.getDouble("Bruttopreis"),
+							  results.getDouble("Nettopreis"),
+							  results.getInt("Mwst_Satz"),
+							  kat_results.getString("Bezeichnung")
+							  );
+				}
 			}
 			db.getDb_conn().close();
 		} catch (SQLException e) {
@@ -58,15 +63,20 @@ public class ArtikelDBAdapter implements DatenInterface<Artikel>{
 			PreparedStatement stmt = db.getDb_conn().prepareStatement(sql);
 			ResultSet results = stmt.executeQuery();
 			while(results.next()) {
-				artikel = new Artikel(results.getInt("Artikelnummer"),
-									  results.getString("Bezeichnung"),
-									  results.getString("Beschreibung"),
-									  results.getInt("Lagerbestand"),
-									  results.getDouble("Bruttopreis"),
-									  results.getDouble("Nettopreis"),
-									  results.getInt("Mwst_Satz"),
-									  results.getString("Kategorie_ID")
-									  );
+				String kat_sql = "SELECT Bezeichnung FROM Kategorie WHERE Kategorie_ID = " + results.getString("Kategorie_ID");
+				PreparedStatement kat_stmt = db.getDb_conn().prepareStatement(kat_sql);
+				ResultSet kat_results = kat_stmt.executeQuery();
+				while(kat_results.next()) {
+					artikel = new Artikel(results.getInt("Artikelnummer"),
+							  results.getString("Bezeichnung"),
+							  results.getString("Beschreibung"),
+							  results.getInt("Lagerbestand"),
+							  results.getDouble("Bruttopreis"),
+							  results.getDouble("Nettopreis"),
+							  results.getInt("Mwst_Satz"),
+							  kat_results.getString("Bezeichnung")
+							  );
+				}
 			}
 			db.getDb_conn().close();
 		} catch (SQLException e) {
