@@ -26,6 +26,10 @@ public class Artikel {
 		Kategorie = kategorie;
 		artikelbilder = new ArrayList<Artikelbild>();
 	}
+	
+	public Artikel() {
+		
+	}
 
 	public String getBezeichnung() {
 		return bezeichnung;

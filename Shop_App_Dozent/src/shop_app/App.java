@@ -1,9 +1,11 @@
 package shop_app;
 
 import java.awt.EventQueue;
+import java.util.ArrayList;
 
 import shop_app.model.artikel.Artikel;
 import shop_app.model.database.ArtikelDBAdapter;
+import shop_app.model.database.ArtikelJSONAdapter;
 import shop_app.model.database.Database;
 import shop_app.view.hauptfenster;
 
@@ -36,6 +38,21 @@ public class App {
 //		Artikel neu = new Artikel(0, "Office 95", "Altes Office", 15, 19.99, 14.99, 19, "2");
 //		System.out.println(neu);
 //		artikelDB.speichern(neu);
+		
+		ArtikelJSONAdapter artikelJson = new ArtikelJSONAdapter();
+		artikelJson.speichern(dbArtikel);
+		
+		ArrayList<Artikel> sortiment = new ArrayList<>();
+		sortiment.add(dbArtikel);
+		sortiment.add(artikelDB.laden(11));
+		sortiment.add(artikelDB.laden(12));
+		
+		artikelJson.speichern(sortiment);
+		
+		Artikel ausJson = artikelJson.laden(12);
+		System.out.println(ausJson);
+		
+		artikelJson.loeschen(dbArtikel);
 	}
 
 }

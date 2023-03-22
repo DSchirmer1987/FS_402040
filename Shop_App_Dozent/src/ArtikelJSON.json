@@ -1,0 +1,24 @@
+[
+  {
+    "artikelnummer": 11,
+    "bezeichnung": "Logitech MX Master 3",
+    "beschreibung": "Eine kabellose Maus mit fortschrittlicher Ergonomie und Steuerung",
+    "lagerbestand": 15,
+    "brutto": 99.99,
+    "netto": 84.02,
+    "mwst_satz": 19,
+    "Kategorie": "Peripherie",
+    "artikelbilder": []
+  },
+  {
+    "artikelnummer": 12,
+    "bezeichnung": "Corsair K95 RGB Platinum XT",
+    "beschreibung": "Eine mechanische Gaming-Tastatur mit individuell einstellbarer RGB-Beleuchtung",
+    "lagerbestand": 8,
+    "brutto": 199.99,
+    "netto": 168.06,
+    "mwst_satz": 19,
+    "Kategorie": "Peripherie",
+    "artikelbilder": []
+  }
+]
