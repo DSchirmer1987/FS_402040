@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import shop_app.model.artikel.Artikel;
 import shop_app.model.database.ArtikelDBAdapter;
 import shop_app.model.database.ArtikelJSONAdapter;
+import shop_app.model.database.ArtikelXMLAdapter;
 import shop_app.model.database.Database;
 import shop_app.view.hauptfenster;
 
@@ -39,20 +40,24 @@ public class App {
 //		System.out.println(neu);
 //		artikelDB.speichern(neu);
 		
+		//JSON
 		ArtikelJSONAdapter artikelJson = new ArtikelJSONAdapter();
 		artikelJson.speichern(dbArtikel);
-		
 		ArrayList<Artikel> sortiment = new ArrayList<>();
 		sortiment.add(dbArtikel);
 		sortiment.add(artikelDB.laden(11));
 		sortiment.add(artikelDB.laden(12));
-		
 		artikelJson.speichern(sortiment);
-		
 		Artikel ausJson = artikelJson.laden(12);
 		System.out.println(ausJson);
-		
 		artikelJson.loeschen(dbArtikel);
+		
+		//XML
+		ArtikelXMLAdapter artikelXML = new ArtikelXMLAdapter();
+		artikelXML.speichern(dbArtikel);
+		
+		ArrayList<Artikel> xmlListe = artikelXML.alleLaden();
+		System.out.println(xmlListe);
 	}
 
 }
